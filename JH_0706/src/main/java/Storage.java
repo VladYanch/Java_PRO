@@ -36,7 +36,7 @@ public class Storage {
     public double getClient(Client client) {
         return storage.get(client);
     }
-    
+
 //    public Double printAvg(Enum<Status> status) {
 //        double sum;
 //        storage.values()
