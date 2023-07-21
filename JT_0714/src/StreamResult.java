@@ -20,7 +20,6 @@ public class StreamResult {
 
 
 //        System.out.println("Stream sum = " + integerStream.mapToInt(i -> i).sum());
-
 //        ModelList modelList = new ModelList(List.of("One", "Two"));
 //        modelList.getData()  // O(n), n - elements in modelList
 //                .forEach(item -> System.out.println("model item = " + item));
