@@ -14,6 +14,18 @@ public class Developer {
     int salary;
     Character gender;
     Car car;
+
+    @Override
+    public String toString() {
+        return "Developer{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                ", gender=" + gender +
+                ", car=" + car.toString() +
+                '}';
+    }
 }
 
 // Написать класс Девелопер у которого будет имя, фамилия , возраст, зарплата, чар- пол и машина

@@ -1,20 +1,24 @@
 package org.example;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-    }
-}
+        List<Developer> developers = Generator.generateDeveloper(20);
+        System.out.println("-".repeat(100));
 
-// Написать класс машина у которой будут поля цвет, булеан-спортивная или нет, энам марка и инт максимальная скорость
-// Написать класс Девелопер у которого будет имя, фамилия , возраст, зарплата, чар- пол и машина
-// Написать класс Генератор которые генерирует Девелоперов и Машины
-// у генератора будут два метода которые будут генерировать машины и девелоперов
-// в зависимости от количества которые вы передадите в параметры
-// Вам в помощ библиотека faker для генерации любых имен, фамилий итд
-// Написать класс Обработчик который будет:
-// —проходится по листу девелоперов и выводить всех мужчин у которых спортивная машина
-// —группировать по полу все машины. те у мужчин такие то у женщин такие то
-// —Переводить в мапу ключ-девелопер а значение максимальная скоросьть авто
-// —записывать в текстовый файл всех девелоперов в формате : Jonn-[auto: BMW ::: salary: 12345] в столбик.
-// Т.е в файле нужна только эта инфа
+
+        System.out.println("SportCar = speed>280");
+        System.out.println(Reports.findAllManSportCar(developers));
+        System.out.println("-".repeat(100));
+
+        System.out.println(Reports.groupingByGender(developers));
+        System.out.println("-".repeat(100));
+
+        System.out.println(Reports.mapDeveloperBySpeed(developers));
+        System.out.println("-".repeat(100));
+
+        Reports.writeToFile(developers);
+    }
+
+}

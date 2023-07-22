@@ -1,17 +1,32 @@
 package org.example;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 public class Car {
-    String color;
-    boolean sport;
     Mark mark;
-    int speed;
+    String color;
+    int maxSpeed;
+    boolean sport;
+
+    public Car(Mark mark, String color, int maxSpeed, boolean sport) {
+        this.color = color;
+        this.mark = mark;
+        this.maxSpeed = maxSpeed;
+        this.sport = sport;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "color='" + color + '\'' +
+                ", mark=" + mark +
+                ", maxSpeed=" + maxSpeed +
+                ", sport=" + sport +
+                '}';
+    }
 }
 
 // Написать класс машина у которой будут поля цвет, булеан-спортивная или нет, энам марка и инт максимальная скорость

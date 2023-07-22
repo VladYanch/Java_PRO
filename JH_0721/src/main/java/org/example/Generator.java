@@ -4,18 +4,58 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Generator {
-    public List<Developer> genDev(int num){
-        List<Developer> developerList = new ArrayList<>(num);
+import com.github.javafaker.Faker;
 
-        return developerList;
+public class Generator {
+
+    static Faker faker = new Faker();
+    static Random random = new Random();
+
+    private static int generateMaxSpeed(){
+        return random.nextInt(220, 380);
     }
 
-    public Car genCar(Car car){
-        Mark mark;
-        Random random = new Random();
-        int i = random.nextInt();
-        return car;
+    public static boolean generateSports(){
+        return generateMaxSpeed() > 280;
+    }
+
+    public static String generateColor(){
+        return faker.color().name();
+    }
+
+    public static Mark generateMark(){
+        Mark[] mark = Mark.values();
+        return mark[random.nextInt(mark.length)];
+    }
+
+    public static Car generateCar() {
+        int speed = generateMaxSpeed();
+        boolean sport = false;
+        if (speed > 280) sport = true;
+        return new Car(
+                generateMark(),
+                generateColor(),
+                speed,
+                sport
+                );
+    }
+    public static char generateGender(){
+            char[] gender = {'m', 'f'};
+            return gender[random.nextInt(gender.length)];
+        }
+    public static List<Developer> generateDeveloper(int num) {
+        List<Developer> developerList = new ArrayList<>(num);
+        for (int i = 0; i < num ; i++) {
+            developerList.add(new Developer(
+                    faker.name().firstName(),
+                    faker.name().lastName(),
+                    random.nextInt(18,67),
+                    random.nextInt(3000, 8000),
+                    generateGender(),
+                    generateCar()
+            ));
+        }
+        return developerList;
     }
 }
 
