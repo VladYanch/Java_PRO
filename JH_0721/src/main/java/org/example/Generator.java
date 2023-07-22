@@ -15,9 +15,6 @@ public class Generator {
         return random.nextInt(220, 380);
     }
 
-    public static boolean generateSports(){
-        return generateMaxSpeed() > 280;
-    }
 
     public static String generateColor(){
         return faker.color().name();
@@ -30,8 +27,7 @@ public class Generator {
 
     public static Car generateCar() {
         int speed = generateMaxSpeed();
-        boolean sport = false;
-        if (speed > 280) sport = true;
+        boolean sport = speed > 280;
         return new Car(
                 generateMark(),
                 generateColor(),
@@ -59,7 +55,7 @@ public class Generator {
     }
 }
 
-// Написать класс Генератор которые генерирует Девелоперов и Машины
-// у генератора будут два метода которые будут генерировать машины и девелоперов
+// Написать класс Генератор, который генерирует Девелоперов и Машины
+// у генератора будут два метода, которые будут генерировать машины и Девелоперов
 // в зависимости от количества которые вы передадите в параметры
-// Вам в помощ библиотека faker для генерации любых имен, фамилий итд
+// Вам в помощь библиотека faker для генерации любых имен, фамилий итд
