@@ -17,7 +17,6 @@ public class Car {
         this.maxSpeed = maxSpeed;
         this.sport = sport;
     }
-
     @Override
     public String toString() {
         return "Car{" +
