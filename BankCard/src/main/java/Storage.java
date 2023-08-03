@@ -14,15 +14,15 @@ public class Storage {
     }
 
     public void printNameBalance() {
-        storage.entrySet().forEach(c-> System.out.println(c.getKey().getName()+": "+c.getValue()));
+        storage.entrySet().forEach(c-> System.out.printf(c.getKey().getName()+": "+c.getValue(),%12 %1.2f));
     }
 
     public void printNameCardNumDataCVV() {
         storage.entrySet()
                 .forEach(c-> System.out.println(c.getKey().getName()+": "+c.getKey()
-                        .getBankCard().getCardData().getNumber().toString()+" DATE: "
-                        + c.getKey()
-                        .getBankCard().getCardData().getValid().toString()
+                        .getBankCard().getCardData().getNumber()
+                        +" DATE: " + c.getKey().getBankCard().getCardData().getValid()
+                        +" CVV: " + c.getKey().getBankCard().getCardData().getCvv()
                         ));
     }
 
