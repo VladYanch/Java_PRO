@@ -15,7 +15,8 @@ public class Reports {
                 .toList();
     }
 
-    public static Map<Character, List<Developer>> groupingByGender(List<Developer> list) {
+    public static Map<Character, List<Developer>>
+    groupingByGender(List<Developer> list) {
         Map<Character, List<Developer>> map = list.stream()
                 .collect(Collectors.groupingBy(Developer::getGender));
         return map;
