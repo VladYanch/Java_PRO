@@ -13,11 +13,8 @@ class OrderTest {
 
     Product product1 = new Product("Banana", 1.0, 3, "obst");
     Product product2 = new Product("Beer", 2.0,8, "getrenk");
-
     List<Product> list = new ArrayList<>();
-
     Order order = new Order();
-
     @BeforeEach
     void setUp(){
         list.clear();
