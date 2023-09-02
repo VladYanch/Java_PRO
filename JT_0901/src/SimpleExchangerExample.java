@@ -3,8 +3,7 @@ public class SimpleExchangerExample {
         SimpleExchanger<String> simpleExchanger = new SimpleExchanger<>();
 
         Thread thread1 = new Thread(() -> {
-            System.out.println("Thread1: " + simpleExchanger.exchange(null));
-//            System.out.println("Thread1: " + simpleExchanger.exchange("Msg 1"));
+            System.out.println("Thread1: " + simpleExchanger.exchange(null)); //проверка на null
         });
 
         thread1.setName("First");

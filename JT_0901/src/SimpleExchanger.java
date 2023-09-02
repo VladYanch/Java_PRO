@@ -1,6 +1,5 @@
 public class SimpleExchanger<T> {
     private T message;
-
     private boolean isFirstCame;
     private boolean isSecondCame;
 
