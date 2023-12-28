@@ -79,8 +79,10 @@ public class SnakesLadders {
         if (position > 100) position = 100 - position + 100 ;
         else if (position + die1 + die2 == 100) {
             won = true;
-            return "Player num is won";
         }
+
+        if (position == 100) won=true;
+
         String result = "Player " + num + " is on square " + position;
         System.out.println(result);
         return result;

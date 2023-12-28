@@ -21,7 +21,7 @@ public class Main {
             if (player2.dice1 == player2.dice2)  player2.play(player2.dice(), player2.dice());
 //            anykey = key.nextInt();
         }
-        if (player1.won) System.out.println("Player1 won!");
-        else if (player2.won) System.out.println("Player2 won!");
+        if (player1.won) System.out.println("Player 1 won!");
+        else if (player2.won) System.out.println("Player 2 won!");
     }
 }
