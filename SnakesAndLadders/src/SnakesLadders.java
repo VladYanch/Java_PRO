@@ -77,11 +77,9 @@ public class SnakesLadders {
         }
         else position += die1 + die2;
         if (position > 100) position = 100 - position + 100 ;
-        else if (position + die1 + die2 == 100) {
+        if (position == 100) {
             won = true;
         }
-
-        if (position == 100) won=true;
 
         String result = "Player " + num + " is on square " + position;
         System.out.println(result);
@@ -91,7 +89,7 @@ public class SnakesLadders {
     public int dice() {
         int number;
         Random dice = new Random();
-        number = dice.nextInt(5);
+        number = dice.nextInt(6);
         number++;
         return number;
     }
